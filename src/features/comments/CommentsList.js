@@ -2,6 +2,9 @@ import { Col } from "reactstrap";
 import Comment from "./Comment";
 import { selectCommentsByCampsiteId } from "./commentsSlice";
 import CommentForm from "./CommentForm";
+import { useSelector } from "react-redux";
+
+const comments = useSelector(selectCommentsByCampsiteId(campsiteId));
 
 const CommentsList = ({ campsiteId }) => {
   const comments = selectCommentsByCampsiteId(campsiteId);
